@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/e421083458/gin_scaffold/router"
 	"github.com/e421083458/golang_common/lib"
 	"os"
@@ -8,8 +9,11 @@ import (
 	"syscall"
 )
 
-func main()  {
-	lib.InitModule("./conf/dev/",[]string{"base","mysql","redis",})
+func main() {
+	num := 100
+	fmt.Println(num)
+	fmt.Println("world")
+	lib.InitModule("./conf/dev/", []string{"base", "mysql", "redis"})
 	defer lib.Destroy()
 	router.HttpServerRun()
 
